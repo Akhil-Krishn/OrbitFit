@@ -1,0 +1,13 @@
+@import "tailwindcss";
+:root { --c-bg:#edf0f2; --c-surface:#ffffff; --c-ink:#12161c; --c-muted:#5b6573; --c-line:#cbd2da; --c-accent:#e8470f; --c-navy:#1f3a5f; --c-musc:#dfe4ea; --c-body:#eef1f4; --c-outline:#7c8794; --c-grid:#e3e7ec; color-scheme: light; }
+:root[data-theme=dark] { --c-bg:#0f1318; --c-surface:#181d24; --c-ink:#e8ecf1; --c-muted:#98a3b1; --c-line:#2c3541; --c-accent:#ff6a33; --c-navy:#7fa6d9; --c-musc:#262e39; --c-body:#1d242d; --c-outline:#5d6a7b; --c-grid:#252d38; color-scheme: dark; }
+@theme inline {
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: var(--c-bg); --color-surface: var(--c-surface); --color-ink: var(--c-ink); --color-muted: var(--c-muted);
+  --color-line: var(--c-line); --color-accent: var(--c-accent); --color-navy: var(--c-navy);
+}
+body { background: var(--c-bg); color: var(--c-ink); font-variant-numeric: tabular-nums; }
+@layer base { button, select, input { font: inherit; } button { color: inherit; } select, input { color: var(--c-ink); } }
+button:focus-visible, select:focus-visible, input:focus-visible, [role=switch]:focus-visible { outline: 3px solid var(--c-navy); outline-offset: 2px; }
+.region { transition: fill-opacity .2s; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
